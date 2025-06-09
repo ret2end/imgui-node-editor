@@ -113,15 +113,15 @@ void ax::NodeEditor::PopStyleColor(int count)
     s_Editor->GetStyle().PopColor(count);
 }
 
-void ax::NodeEditor::PushStyleVar(StyleVar varIndex, float value)
-{
-    s_Editor->GetStyle().PushVar(varIndex, value);
-}
+// void ax::NodeEditor::PushStyleVar(StyleVar varIndex, float value)
+// {
+//     s_Editor->GetStyle().PushVar(varIndex, value);
+// }
 
-void ax::NodeEditor::PushStyleVar(StyleVar varIndex, const ImVec2& value)
-{
-    s_Editor->GetStyle().PushVar(varIndex, value);
-}
+// void ax::NodeEditor::PushStyleVar(StyleVar varIndex, const ImVec2& value)
+// {
+//     s_Editor->GetStyle().PushVar(varIndex, value);
+// }
 
 void ax::NodeEditor::PushStyleVar(StyleVar varIndex, const ImVec4& value)
 {
@@ -255,14 +255,14 @@ bool ax::NodeEditor::BeginCreate(const ImVec4& color, float thickness)
         return false;
 }
 
-bool ax::NodeEditor::QueryNewLink(PinId* startId, PinId* endId)
-{
-    using Result = ax::NodeEditor::Detail::CreateItemAction::Result;
+// bool ax::NodeEditor::QueryNewLink(PinId* startId, PinId* endId)
+// {
+//     using Result = ax::NodeEditor::Detail::CreateItemAction::Result;
 
-    auto& context = s_Editor->GetItemCreator();
+//     auto& context = s_Editor->GetItemCreator();
 
-    return context.QueryLink(startId, endId) == Result::True;
-}
+//     return context.QueryLink(startId, endId) == Result::True;
+// }
 
 bool ax::NodeEditor::QueryNewLink(PinId* startId, PinId* endId, const ImVec4& color, float thickness)
 {
@@ -277,14 +277,14 @@ bool ax::NodeEditor::QueryNewLink(PinId* startId, PinId* endId, const ImVec4& co
     return result == Result::True;
 }
 
-bool ax::NodeEditor::QueryNewNode(PinId* pinId)
-{
-    using Result = ax::NodeEditor::Detail::CreateItemAction::Result;
+// bool ax::NodeEditor::QueryNewNode(PinId* pinId)
+// {
+//     using Result = ax::NodeEditor::Detail::CreateItemAction::Result;
 
-    auto& context = s_Editor->GetItemCreator();
+//     auto& context = s_Editor->GetItemCreator();
 
-    return context.QueryNode(pinId) == Result::True;
-}
+//     return context.QueryNode(pinId) == Result::True;
+// }
 
 bool ax::NodeEditor::QueryNewNode(PinId* pinId, const ImVec4& color, float thickness)
 {
@@ -299,14 +299,14 @@ bool ax::NodeEditor::QueryNewNode(PinId* pinId, const ImVec4& color, float thick
     return result == Result::True;
 }
 
-bool ax::NodeEditor::AcceptNewItem()
-{
-    using Result = ax::NodeEditor::Detail::CreateItemAction::Result;
+// bool ax::NodeEditor::AcceptNewItem()
+// {
+//     using Result = ax::NodeEditor::Detail::CreateItemAction::Result;
 
-    auto& context = s_Editor->GetItemCreator();
+//     auto& context = s_Editor->GetItemCreator();
 
-    return context.AcceptItem() == Result::True;
-}
+//     return context.AcceptItem() == Result::True;
+// }
 
 bool ax::NodeEditor::AcceptNewItem(const ImVec4& color, float thickness)
 {
@@ -321,12 +321,12 @@ bool ax::NodeEditor::AcceptNewItem(const ImVec4& color, float thickness)
     return result == Result::True;
 }
 
-void ax::NodeEditor::RejectNewItem()
-{
-    auto& context = s_Editor->GetItemCreator();
+// void ax::NodeEditor::RejectNewItem()
+// {
+//     auto& context = s_Editor->GetItemCreator();
 
-    context.RejectItem();
-}
+//     context.RejectItem();
+// }
 
 void ax::NodeEditor::RejectNewItem(const ImVec4& color, float thickness)
 {
@@ -546,20 +546,20 @@ bool ax::NodeEditor::DeleteLink(LinkId linkId)
         return false;
 }
 
-bool ax::NodeEditor::HasAnyLinks(NodeId nodeId)
-{
-    return s_Editor->HasAnyLinks(nodeId);
-}
+// bool ax::NodeEditor::HasAnyLinks(NodeId nodeId)
+// {
+//     return s_Editor->HasAnyLinks(nodeId);
+// }
 
 bool ax::NodeEditor::HasAnyLinks(PinId pinId)
 {
     return s_Editor->HasAnyLinks(pinId);
 }
 
-int ax::NodeEditor::BreakLinks(NodeId nodeId)
-{
-    return s_Editor->BreakLinks(nodeId);
-}
+// int ax::NodeEditor::BreakLinks(NodeId nodeId)
+// {
+//     return s_Editor->BreakLinks(nodeId);
+// }s
 
 int ax::NodeEditor::BreakLinks(PinId pinId)
 {
@@ -759,4 +759,8 @@ int ax::NodeEditor::GetNodeCount()
 int ax::NodeEditor::GetOrderedNodeIds(NodeId* nodes, int size)
 {
     return s_Editor->GetNodeIds(nodes, size);
+}
+
+void ax::NodeEditor::SetImGuiContext(ImGuiContext* ctx) {
+    ImGui::SetCurrentContext(ctx);
 }
