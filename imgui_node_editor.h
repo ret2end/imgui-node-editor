@@ -319,9 +319,9 @@ IMGUI_NODE_EDITOR_API const char* GetStyleColorName(StyleColor colorIndex);
 IMGUI_NODE_EDITOR_API void PushStyleColor(StyleColor colorIndex, const ImVec4& color);
 IMGUI_NODE_EDITOR_API void PopStyleColor(int count = 1);
 
-// IMGUI_NODE_EDITOR_API void PushStyleVar(StyleVar varIndex, float value);
-// IMGUI_NODE_EDITOR_API void PushStyleVar(StyleVar varIndex, const ImVec2& value);
-IMGUI_NODE_EDITOR_API void PushStyleVar(StyleVar varIndex, const ImVec4& value);
+IMGUI_NODE_EDITOR_API void PushStyleVar_Float(StyleVar varIndex, float value);
+IMGUI_NODE_EDITOR_API void PushStyleVar_ImVec2(StyleVar varIndex, const ImVec2& value);
+IMGUI_NODE_EDITOR_API void PushStyleVar_ImVec4(StyleVar varIndex, const ImVec4& value);
 IMGUI_NODE_EDITOR_API void PopStyleVar(int count = 1);
 
 IMGUI_NODE_EDITOR_API void Begin(const char* id, const ImVec2& size = ImVec2(0, 0));
@@ -401,10 +401,10 @@ IMGUI_NODE_EDITOR_API void DeselectLink(LinkId linkId);
 IMGUI_NODE_EDITOR_API bool DeleteNode(NodeId nodeId);
 IMGUI_NODE_EDITOR_API bool DeleteLink(LinkId linkId);
 
-// IMGUI_NODE_EDITOR_API bool HasAnyLinks(NodeId nodeId); // Returns true if node has any link connected
-IMGUI_NODE_EDITOR_API bool HasAnyLinks(PinId pinId); // Return true if pin has any link connected
-// IMGUI_NODE_EDITOR_API int BreakLinks(NodeId nodeId); // Break all links connected to this node
-IMGUI_NODE_EDITOR_API int BreakLinks(PinId pinId); // Break all links connected to this pin
+IMGUI_NODE_EDITOR_API bool HasAnyLinks_NodeId(NodeId nodeId); // Returns true if node has any link connected
+IMGUI_NODE_EDITOR_API bool HasAnyLinks_PinId(PinId pinId); // Return true if pin has any link connected
+IMGUI_NODE_EDITOR_API int BreakLinks_NodeId(NodeId nodeId); // Break all links connected to this node
+IMGUI_NODE_EDITOR_API int BreakLinks_PinId(PinId pinId); // Break all links connected to this pin
 
 IMGUI_NODE_EDITOR_API void NavigateToContent(float duration = -1);
 IMGUI_NODE_EDITOR_API void NavigateToSelection(bool zoomIn = false, float duration = -1);

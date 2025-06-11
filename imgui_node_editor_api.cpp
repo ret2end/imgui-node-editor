@@ -98,12 +98,12 @@ ax::NodeEditor::Style& ax::NodeEditor::GetStyle()
     return s_Editor->GetStyle();
 }
 
-const char* ax::NodeEditor::GetStyleColorName(StyleColor colorIndex)
+const char *ax::NodeEditor::GetStyleColorName(StyleColor colorIndex)
 {
     return s_Editor->GetStyle().GetColorName(colorIndex);
 }
 
-void ax::NodeEditor::PushStyleColor(StyleColor colorIndex, const ImVec4& color)
+void ax::NodeEditor::PushStyleColor(StyleColor colorIndex, const ImVec4 &color)
 {
     s_Editor->GetStyle().PushColor(colorIndex, color);
 }
@@ -113,17 +113,17 @@ void ax::NodeEditor::PopStyleColor(int count)
     s_Editor->GetStyle().PopColor(count);
 }
 
-// void ax::NodeEditor::PushStyleVar(StyleVar varIndex, float value)
-// {
-//     s_Editor->GetStyle().PushVar(varIndex, value);
-// }
+void ax::NodeEditor::PushStyleVar_Float(StyleVar varIndex, float value)
+{
+    s_Editor->GetStyle().PushVar(varIndex, value);
+}
 
-// void ax::NodeEditor::PushStyleVar(StyleVar varIndex, const ImVec2& value)
-// {
-//     s_Editor->GetStyle().PushVar(varIndex, value);
-// }
+void ax::NodeEditor::PushStyleVar_ImVec2(StyleVar varIndex, const ImVec2 &value)
+{
+    s_Editor->GetStyle().PushVar(varIndex, value);
+}
 
-void ax::NodeEditor::PushStyleVar(StyleVar varIndex, const ImVec4& value)
+void ax::NodeEditor::PushStyleVar_ImVec4(StyleVar varIndex, const ImVec4 &value)
 {
     s_Editor->GetStyle().PushVar(varIndex, value);
 }
@@ -546,22 +546,22 @@ bool ax::NodeEditor::DeleteLink(LinkId linkId)
         return false;
 }
 
-// bool ax::NodeEditor::HasAnyLinks(NodeId nodeId)
-// {
-//     return s_Editor->HasAnyLinks(nodeId);
-// }
+bool ax::NodeEditor::HasAnyLinks_NodeId(NodeId nodeId)
+{
+    return s_Editor->HasAnyLinks(nodeId);
+}
 
-bool ax::NodeEditor::HasAnyLinks(PinId pinId)
+bool ax::NodeEditor::HasAnyLinks_PinId(PinId pinId)
 {
     return s_Editor->HasAnyLinks(pinId);
 }
 
-// int ax::NodeEditor::BreakLinks(NodeId nodeId)
-// {
-//     return s_Editor->BreakLinks(nodeId);
-// }s
+int ax::NodeEditor::BreakLinks_NodeId(NodeId nodeId)
+{
+    return s_Editor->BreakLinks(nodeId);
+}
 
-int ax::NodeEditor::BreakLinks(PinId pinId)
+int ax::NodeEditor::BreakLinks_PinId(PinId pinId)
 {
     return s_Editor->BreakLinks(pinId);
 }
