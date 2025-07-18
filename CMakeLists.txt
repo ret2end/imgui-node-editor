@@ -32,7 +32,7 @@ endif (IMGUI_STATIC)
 
 target_compile_definitions(cimguinodeeditor PUBLIC IMGUI_DISABLE_OBSOLETE_FUNCTIONS=1)
 target_include_directories(cimguinodeeditor PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/)
-target_include_directories(cimguinodeeditor PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../imgui)
+target_include_directories(cimguinodeeditor PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../cimgui/imgui)
 set_target_properties(cimguinodeeditor PROPERTIES PREFIX "")
 
 #install
