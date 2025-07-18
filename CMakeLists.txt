@@ -4,11 +4,11 @@ project(cimguinodeeditor)
 
 #general settings
 file(GLOB IMGUI_SOURCES
-    ../imgui/imgui.cpp
-    ../imgui/imgui_draw.cpp
-    ../imgui/imgui_demo.cpp
-    ../imgui/imgui_widgets.cpp
-	../imgui/imgui_tables.cpp
+    ../cimgui/imgui/imgui.cpp
+    ../cimgui/imgui/imgui_draw.cpp
+    ../cimgui/imgui/imgui_demo.cpp
+    ../cimgui/imgui/imgui_widgets.cpp
+	../cimgui/imgui/imgui_tables.cpp
     imgui_node_editor.cpp
     imgui_node_editor_api.cpp
     crude_json.cpp
